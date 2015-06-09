@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 
 ## Loading and preprocessing the data
@@ -48,7 +53,7 @@ When examining the frequency of steps per day, a histogram reveals that a large 
 hist(dailysteps$steps,xlab="Number of Daily Steps",main="Historgram: Steps per Day",breaks=50)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
 
 This observation is supported by a review of the mean and median steps taken per day.
 
@@ -85,7 +90,7 @@ Plotting this data reveals that activity appears to peak at the 700-900 minute m
 with(average_steps_interval,plot(interval,steps,type="l",ylab="Average number of steps",xlab="5 minute interval",main="Daily Activity: mean steps per day by 5-minute interval"))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
+![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png) 
 
 which is confirmed by determining the interval with the highest average number of steps:
 
@@ -141,7 +146,7 @@ dailystepsNA2Mean<-aggregate(steps~date,data=activityNA2Mean,FUN=sum)
 hist(dailystepsNA2Mean$steps,xlab="Number of Daily Steps",main="Historgram: Steps per Day",breaks=50)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-12-1.png) 
+![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png) 
 
 While it appears to alter the dataset slightly, a review of the mean and median
 steps per day reveals that replacing NA data with mean data at the 5-minute interval
@@ -198,4 +203,4 @@ xyplot(steps~interval|daytype,data=average_steps_interval_wkday,layout=c(1,2),ty
        ylab="Number of Steps",xlab="Interval")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-15-1.png) 
+![plot of chunk unnamed-chunk-15](figure/unnamed-chunk-15-1.png) 
