@@ -138,8 +138,11 @@ average_steps_interval_wkday<-aggregate(steps~interval+daytype,data=activity,FUN
 when comparing average activity on weekdays vs. weekends, one observes noticable
 differences between the two types:
 
+
 ```{r,echo=FALSE}
 library(lattice)
 xyplot(steps~interval|daytype,data=average_steps_interval_wkday,layout=c(1,2),type="l",
        ylab="Number of Steps",xlab="Interval")
+
+
 
